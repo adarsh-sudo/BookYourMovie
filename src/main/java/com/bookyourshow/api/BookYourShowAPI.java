@@ -43,7 +43,7 @@ public class BookYourShowAPI {
 	}
 	
 	@GetMapping(value = "/movie/{seatType}")
-	ResponseEntity<List<BookYourShowDTO>> getBookingByScreenName(@PathVariable String seatType) throws BookYourShowException
+	ResponseEntity<List<BookYourShowDTO>> getBookingBySeatType(@PathVariable String seatType) throws BookYourShowException
 	{
 		return new ResponseEntity<>(bookYourShowService.getBookingBySeatType(seatType) , HttpStatus.OK);
 		
