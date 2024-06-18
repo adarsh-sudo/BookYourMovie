@@ -48,7 +48,7 @@ public class BookYourShowServiceImplementation implements BookYourShowService {
 		if(Boolean.FALSE.equals(bookYourShows.isEmpty()))
 			throw new BookYourShowException("BookYourShow.BOOKING_EXISTS");
 		
-		BookYourShow bookYourShow = bookYourShowDTO.prepareEntity(bookYourShowDTO);
+		BookYourShow bookYourShow = new BookYourShowDTO().prepareEntity(bookYourShowDTO);
 		
 		bookYourShow.setBookingAmount(calculateTotalBookingAmount( bookYourShowDTO.getNoOfSeats() ,  bookYourShowDTO.getSeatType()));
 		
